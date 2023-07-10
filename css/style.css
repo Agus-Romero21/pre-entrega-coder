@@ -64,8 +64,6 @@ nav{
     box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
 }
 
-
-
 main{
     margin-top: 7rem;
     background-color: transparent;
@@ -219,9 +217,6 @@ address{
     height: 52px;
 }
 
-
-/*estilos "reset" para todas las etiquetas <a>*/
-
 a{
     text-decoration: none;
     color:black
@@ -235,8 +230,6 @@ a{
 .div__p--a:active{
     color: white;
 }
-
-/*estilos para formularios que no estan en el index*/
 
 .section__form{
     margin: 2rem;
@@ -391,7 +384,6 @@ form .div__ul--short input:active{
         align-content: center;
     }
     
-    /*carrito*/
     .body__main--carrito{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -440,15 +432,11 @@ form .div__ul--short input:active{
         background-color: rgb(28, 13, 168);
     }
 
-    /*config*/
-
     .main__form{
         display: flex;
         justify-content: center;
         align-content: center;
     }
-    
-    /*login*/
 
     .main__grid{
         margin-top: 3rem;
@@ -473,8 +461,6 @@ form .div__ul--short input:active{
         grid-area: inicio;
         justify-self: start;
     }
-
-    /*nosotros*/
 
     .main__section--nosotros{
         display: grid;
@@ -515,4 +501,3 @@ form .div__ul--short input:active{
         width: 50%;
     }
 }
-/*los tamaños de hover despues los voy a remplazar por translate, cuando se puedan usar, porque ahora veo que me mueven un poco el tamaño del mein y se ve un movimiento en toda la pagina que queda feo*/
