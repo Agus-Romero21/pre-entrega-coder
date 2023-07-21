@@ -1,0 +1,248 @@
+@import "../utilidades/variables";
+@import "../utilidades/-mixin.scss";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header{
+    background-color: $color-principal;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.5fr 0.5fr;
+    grid-template-areas: 
+        "logo login"
+        "nav nav";
+    gap: 5px;
+    width: 100%;
+    height: 55px;
+    position: fixed;  
+    z-index: 1;
+    top: 0px;
+        
+    div.header__icon{
+        width: 3rem;
+        border-radius: 50%;
+        box-shadow: $color-sombra
+    }
+    
+    .header__login{
+        justify-self: end;
+        width: 3rem;
+        border-radius: 50%;
+        box-shadow: $color-sombra
+    }
+
+    nav{
+        grid-area: nav;
+        width: 100%;
+        height: 3,5rem;
+        background-color: $color-principal;
+        box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    }
+    
+}
+
+header div a img{
+    width: 3rem;
+    border-radius: 50%;
+} //se especifica una vez nomas
+
+.header__icon:active{
+    box-shadow: 1px 0px 10px rgb(131, 37, 238);   
+}
+
+.header__login:active{
+    box-shadow: 1px 0px 10px rgb(131, 37, 238);   
+}
+
+// esstilos de main
+
+main{
+    margin-top: 7rem;
+    background-color: transparent;
+}
+
+.main__banner{
+    overflow: hidden;
+}
+
+.main__banner img{
+    height: 3rem;
+    object-fit: cover;
+}
+
+//estilos de contactos
+
+.a__instagram{
+    @include contacto (line, 10px)
+}
+
+.a__whatsapp{
+    @include contacto (inline, 50px);
+}
+
+.a__whatsapp:active{
+        @extend %activ-contacto;
+}
+
+.a__instagram:active{
+    @extend %activ-contacto;
+}
+@import "../utilidades/extend";
+
+
+//estilos de compu
+
+@media screen and (min-width:600px) {
+
+    .main__banner img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .a__instagram:hover{
+        box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+        width: 52px;
+        height: 52px;
+    }
+    .a__whatsapp:hover{
+        box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+        width: 52px;
+        height: 52px;
+    }
+
+    .section__form--short{
+        margin: 2rem;
+        width: 18rem;
+        height: 10rem;
+        box-shadow: 2px -2px 3px 3px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    .body__main--carrito{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 0.5fr 2.5fr;
+        grid-template-areas: 
+            "banner banner banner"
+            "h1 h1 h1"
+            "form product product";
+    }
+
+    .body__main--carrito .main__banner{
+        grid-area: banner;
+        margin: 0px;
+    }
+    
+    .body__main--carrito .main__box--title{
+        grid-area: h1;
+    }
+
+    .body__main--carrito .main__carrito--compras{
+        grid-area: form;
+        justify-content: center;
+    }
+
+    .body__main--carrito .main__section--carrito{
+        grid-area: product;
+        max-width: 40rem;
+        max-height: 20rem;
+        overflow: auto;
+    }
+
+    .main__carrito--compras input{
+        margin: 20px;
+        width: 15em;
+        height: 5em;
+        background-color: rgb(79, 79, 180);
+        color: rgb(240, 240, 240);
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    }
+    
+    .main__carrito--compras input:hover{
+        width: 15.5em;
+        height: 5.5em;
+        background-color: rgb(28, 13, 168);
+    }
+
+    .main__form{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .main__grid{
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.1fr 1.9fr;
+        grid-template-areas: 
+            "h2 h2"
+            "registro inicio";
+    }
+
+    .div__grid--h2{
+        grid-area: h2;
+    }
+
+    .div__grid--registro{
+        grid-area: registro;
+        justify-self: end;
+    }
+
+    .div__grid--inicio{
+        grid-area: inicio;
+        justify-self: start;
+    }
+
+    .main__section--nosotros{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "logo info-logo"
+            "img info-img"
+            "form form";
+    }
+
+    .div__img--isisstore{
+        grid-area: logo;
+    }
+
+    .section__p--intro{
+        grid-area: info-logo;
+    }
+
+    .div__img--isis{
+        grid-area: img;
+    }
+
+    .div__p--nosotros{
+        grid-area: img-info;
+    }
+
+    .section__form--nosotros{
+        grid-area: form;
+        justify-self: center;
+    }
+
+    .div__img--isisstore img{
+        width: 50%;
+    }
+
+    .div__img--isis img{
+        width: 50%;
+    }
+}
