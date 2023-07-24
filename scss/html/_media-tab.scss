@@ -1,0 +1,165 @@
+@import "../utilidades/variables";
+
+
+@media screen and (min-width:600px){
+
+.main__banner img{
+    width: 70rem;
+    height: 100%;
+    object-fit: contain;
+}
+
+.main__icon{
+    height: 68rem;
+    
+    div{
+        width: 25rem;
+        height: 25rem;
+        justify-content: center;
+        img{
+            width: 25rem;
+            height: 25rem;
+        }
+    }
+}
+
+.a__instagram:active{
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+    width: 52px;
+    height: 52px;
+}
+.a__whatsapp:active{
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+    width: 52px;
+    height: 52px;
+}
+
+.section__form--short{
+    margin: 2rem;
+    width: 18rem;
+    height: 10rem;
+    box-shadow: $color-luces;
+    border-radius: 8px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.body__main--carrito{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 0.5fr 2.5fr;
+    grid-template-areas: 
+        "banner banner banner"
+        "h1 h1 h1"
+        "form product product";
+}
+
+.body__main--carrito .main__banner{
+    grid-area: banner;
+    margin: 0px;
+}
+
+.body__main--carrito .main__box--title{
+    grid-area: h1;
+}
+
+.body__main--carrito .main__carrito--compras{
+    grid-area: form;
+    justify-content: center;
+}
+
+.body__main--carrito .main__section--carrito{
+    grid-area: product;
+    max-width: 40rem;
+    max-height: 20rem;
+    overflow: auto;
+}
+
+.main__carrito--compras input{
+    margin: 20px;
+    width: 15em;
+    height: 5em;
+    background-color: rgb(79, 79, 180);
+    color: rgb(240, 240, 240);
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.main__carrito--compras input:active{
+    width: 15.5em;
+    height: 5.5em;
+    background-color: rgb(28, 13, 168);
+}
+
+.main__form{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.main__grid{
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 1.9fr;
+    grid-template-areas: 
+        "h2 h2"
+        "registro inicio";
+}
+
+.div__grid--h2{
+    grid-area: h2;
+}
+
+.div__grid--registro{
+    grid-area: registro;
+    justify-self: end;
+}
+
+.div__grid--inicio{
+    grid-area: inicio;
+    justify-self: start;
+}
+
+.main__section--nosotros{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "logo info-logo"
+        "img info-img"
+        "form form";
+}
+
+.div__img--isisstore{
+    grid-area: logo;
+}
+
+.section__p--intro{
+    grid-area: info-logo;
+}
+
+.div__img--isis{
+    grid-area: img;
+}
+
+.div__p--nosotros{
+    grid-area: img-info;
+}
+
+.section__form--nosotros{
+    grid-area: form;
+    justify-self: center;
+}
+
+.div__img--isisstore img{
+    width: 50%;
+}
+
+.div__img--isis img{
+    width: 50%;
+}
+}
