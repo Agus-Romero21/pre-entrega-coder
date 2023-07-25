@@ -1,0 +1,333 @@
+@import "utilidades/_mixin";
+@import "utilidades/condicionales";
+@import "utilidades/extend";
+@import "utilidades/variables";
+@import "html/keyframe";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    @include gradiente-principal;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.5fr 0.5fr;
+    grid-template-areas: 
+        "logo login"
+        "nav nav";
+    gap: 5px;
+    width:$width-responsive;
+    height: 55px;
+    position: fixed;  
+    z-index: 1;
+    top: 0px;
+        
+    div.header__icon{
+        width: 3rem;
+        border-radius: 50%;
+        box-shadow: $color-luces
+    }
+    
+    .header__login{
+        justify-self: end;
+        width: 3rem;
+        border-radius: 50%;
+        box-shadow: $color-luces;
+    }
+
+    nav{
+        grid-area: nav;
+        width: $width-responsive;
+        height: 3,5rem;
+        @include gradiente-secundario;
+        box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    }
+    
+}
+
+header div a img{
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.header__icon:active{
+    box-shadow: 1px 0px 10px rgb(131, 37, 238);   
+}
+
+.header__login:active{
+    box-shadow: 1px 0px 10px rgb(131, 37, 238);   
+}
+
+// esstilos de main
+
+main{
+   
+    margin-top: 7rem;
+    background-color: transparent;
+}
+
+.main__banner{
+    overflow: hidden;
+}
+
+.main__banner img{
+    height: 2.5rem;
+    object-fit: cover;
+}
+
+.main__icon{
+    background-image: linear-gradient(to top, black, white);
+    height: 35rem;
+    justify-content: center;
+    div{
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        img{
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            animation-name: aparecer;
+            animation-duration: 7s;
+            animation-iteration-count:initial;
+        }
+    }
+}
+
+.main__section--nosotros{
+    display: flex;
+    justify-content: center;
+}
+
+.div__img--isisstore{
+    text-align: center;
+}
+
+.div__img--isis{
+    text-align: center;
+}
+
+.div__img--isisstore img{
+    width: 40%;
+    border-radius: 50%;
+    box-shadow: -1px 1px 4px 1px rgba(92, 61, 177, 0.938);    
+}
+
+.div__img--isis img{
+    width: 40%;
+    border-radius: 50%;
+    box-shadow: -1px 1px 4px 1px rgba(92, 61, 177, 0.938)
+}
+
+//estilos de titulos y parrafos
+
+.div__title--h1{
+    @extend %div-textos;
+    h1{
+        font-family: 'Lora', serif;
+    }
+}
+
+.div__subtitle--h2{
+    @extend %div-textos;
+}
+
+.div__subtitle--h2 h2{
+    font-family: 'Belanosima', sans-serif;
+    font-family: 'Lobster Two', cursive;
+}
+
+h3{
+    @extend %div-textos;
+    font-family: 'Belanosima', sans-serif;
+    font-family: 'Lobster Two', cursive;
+}
+
+.div__p{
+    @extend %div-textos;
+}
+
+.div__p p{
+    font-family: 'Belanosima', sans-serif;
+    font-family: 'Lobster Two', cursive;
+}
+
+//estilos de section
+
+section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+//estilos de article
+article{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+//estilos de las cards
+
+.article__card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10rem;
+    height: 15rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.article__card:active{
+    box-shadow: 0px 0px 10px rgb(131, 37, 238);
+}
+
+.div__card--img{ 
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.article__card .div__card--img img{
+    width: 80%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.div__card--info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.div__button{
+    @include efecto-boton ($color-boton);
+}
+
+.div__button:active{
+    @include efecto-boton (rgb(31, 34, 209))
+}
+
+//estilos de formularios
+
+.section__form{
+    margin: 2rem;
+    width: 18rem;
+    height: 18rem;
+    box-shadow: 2px -2px 3px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.section__form--config{
+    margin: 2rem;
+    width: 18rem;
+    height: 18rem;
+    box-shadow: 2px -2px 3px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.section__form--short{
+    margin: 2rem;
+    width: 90%;
+    height: 30%;
+    box-shadow: 2px -2px 3px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+
+form .form__ul{
+    list-style: none;
+}
+
+form .div__ul--li{
+    margin: 2.5rem;
+}
+
+form .div__ul--li input{
+    border: none;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+form .div__ul--li input:active{
+    border-bottom: solid 2px rgba(33, 0, 218, 0.7);
+}
+
+form .div__ul--short{
+    margin: 3rem;
+}
+
+form .div__ul--short input{
+    border: none;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+form .div__ul--short input:active{
+    border-bottom: solid 2px rgba(33, 0, 218, 0.7);
+}
+
+.div__li--button{
+    width: 50%;
+    background-color: rgb(79, 79, 180);
+    color: rgb(240, 240, 240);
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+//estilos de contactos
+
+address{
+    position: fixed;
+    right: 3px;
+    bottom: 3px;
+}
+
+.a__instagram{
+    @include contacto ( 10px);
+}
+
+.a__whatsapp{
+    @include contacto ( 50px);
+}
+
+.a__whatsapp:active{
+        @extend %activ-contacto;
+}
+
+.a__instagram:active{
+    @extend %activ-contacto;
+}
+
+@import "utilidades/extend"; //lo puse aca par que no me deje los estilos arriba en el css cuando compila
+
+
+//estilos de footer
+footer{
+    width: $width-responsive;
+    @include gradiente-secundario;
+    box-shadow: $sombra;
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+}
+@import "html/media-tab";
+@import "html/media-desktop";

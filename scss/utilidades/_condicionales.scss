@@ -1,0 +1,11 @@
+@mixin efecto-boton ($color-btn) {
+    background-color: $color-btn;
+    @if $color-btn == $color-boton{
+    color: white;
+    border-radius: 5px;
+    box-shadow: $sombra;
+    } @else{
+        box-shadow: $color-luces;
+        color: black;
+    }
+}
