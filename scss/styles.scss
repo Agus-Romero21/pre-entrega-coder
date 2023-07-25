@@ -9,11 +9,6 @@
     box-sizing: border-box;
 }
 
-
-
-
-
-
 header{
     @include gradiente-principal;
     display: grid;
@@ -55,7 +50,7 @@ header{
 header div a img{
     width: 3rem;
     border-radius: 50%;
-} //se especifica una vez nomas
+}
 
 .header__icon:active{
     box-shadow: 1px 0px 10px rgb(131, 37, 238);   
@@ -65,11 +60,6 @@ header div a img{
     box-shadow: 1px 0px 10px rgb(131, 37, 238);   
 }
 
-
-
-
-
-
 // esstilos de main
 
 main{
@@ -77,11 +67,6 @@ main{
     margin-top: 7rem;
     background-color: transparent;
 }
-
-
-
-
-
 
 .main__banner{
     overflow: hidden;
@@ -91,13 +76,6 @@ main{
     height: 2.5rem;
     object-fit: cover;
 }
-
-
-
-
-
-
-
 
 .main__icon{
     background-image: linear-gradient(to top, black, white);
@@ -117,12 +95,6 @@ main{
         }
     }
 }
-
-
-
-
-
-
 
 .main__section--nosotros{
     display: flex;
@@ -148,13 +120,6 @@ main{
     border-radius: 50%;
     box-shadow: -1px 1px 4px 1px rgba(92, 61, 177, 0.938)
 }
-
-
-
-
-
-
-
 
 //estilos de titulos y parrafos
 
@@ -189,12 +154,6 @@ h3{
     font-family: 'Lobster Two', cursive;
 }
 
-
-
-
-
-
-
 //estilos de section
 
 section{
@@ -204,12 +163,6 @@ section{
     margin: 10px;
 }
 
-
-
-
-
-
-
 //estilos de article
 article{
     display: flex;
@@ -217,10 +170,6 @@ article{
     flex-wrap: wrap;
     gap: 10px;
 }
-
-
-
-
 
 //estilos de las cards
 
@@ -265,13 +214,8 @@ article{
     @include efecto-boton (rgb(31, 34, 209))
 }
 
-
-
-
-
-
-
 //estilos de formularios
+
 .section__form{
     margin: 2rem;
     width: 18rem;
@@ -349,14 +293,6 @@ form .div__ul--short input:active{
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
-
-
-
-
-
-
-
-
 //estilos de contactos
 
 address{
@@ -382,10 +318,6 @@ address{
 }
 
 @import "utilidades/extend"; //lo puse aca par que no me deje los estilos arriba en el css cuando compila
-
-
-
-
 
 
 //estilos de footer
